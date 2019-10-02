@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS6_VideoRecorder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="B5a-nt-rvl" kind="presentation" identifier="ShowCamera" id="RCw-qp-vEx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445" y="33"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="ezq-ug-gty">
+            <objects>
+                <viewController storyboardIdentifier="CameraView" id="B5a-nt-rvl" customClass="CameraViewController" customModule="iOS6_VideoRecorder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AH0-9n-H7R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6r-zh-7rP" customClass="CameraPreviewView" customModule="iOS6_VideoRecorder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgv-tN-ipe">
+                                <rect key="frame" x="157" y="648" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="K5h-Nv-JEK"/>
+                                    <constraint firstAttribute="width" constant="100" id="QZr-ol-C4U"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="Record"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="B5a-nt-rvl" eventType="touchUpInside" id="i30-Jd-xjh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y6r-zh-7rP" firstAttribute="leading" secondItem="fHU-Av-Kyd" secondAttribute="leading" id="JDj-He-wTF"/>
+                            <constraint firstItem="y6r-zh-7rP" firstAttribute="top" secondItem="AH0-9n-H7R" secondAttribute="top" id="KGd-xN-fn8"/>
+                            <constraint firstItem="y6r-zh-7rP" firstAttribute="trailing" secondItem="fHU-Av-Kyd" secondAttribute="trailing" id="Msb-en-eaB"/>
+                            <constraint firstItem="sgv-tN-ipe" firstAttribute="centerX" secondItem="fHU-Av-Kyd" secondAttribute="centerX" id="NkT-HT-d0i"/>
+                            <constraint firstAttribute="bottom" secondItem="y6r-zh-7rP" secondAttribute="bottom" id="USl-3D-xgH"/>
+                            <constraint firstItem="fHU-Av-Kyd" firstAttribute="bottom" secondItem="sgv-tN-ipe" secondAttribute="bottom" constant="60" id="cB4-Pm-jhg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fHU-Av-Kyd"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="y6r-zh-7rP" id="TXV-PE-rJn"/>
+                        <outlet property="recordButton" destination="sgv-tN-ipe" id="xBz-tl-tpC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ES3-UG-JBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1321.7391304347827" y="27.455357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Record" width="116" height="116"/>
+    </resources>
+</document>
