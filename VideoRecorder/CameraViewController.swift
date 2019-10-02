@@ -13,6 +13,7 @@ class CameraViewController: UIViewController {
 
 	lazy private var captureSession = AVCaptureSession()
 	lazy private var fileOutput = AVCaptureMovieFileOutput()
+	private var player: AVPlayer!
 	
     @IBOutlet var recordButton: UIButton!
     @IBOutlet var cameraView: CameraPreviewView!
@@ -23,6 +24,33 @@ class CameraViewController: UIViewController {
 		// FUTURE: Choose between front / back cameras
 		setupCamera()
 		updateViews()
+		
+		
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
+//		tapGesture.numberOfTapsRequired = 2
+		view.addGestureRecognizer(tapGesture)
+	}
+	
+	@objc func handleTapGesture(_ tapGesture: UITapGestureRecognizer) {
+		// TODO: handle states!!!
+		switch tapGesture.state {
+		case .began:
+			print("Tapped!")
+		case .ended:
+			print("Tapped (end)")
+			
+			replayRecording()
+			
+		default:
+			print("Handle other states: \(tapGesture.state.rawValue)")
+		}
+	}
+	
+	private func replayRecording() {
+		if let player = player {
+			player.seek(to: CMTime.zero)
+			player.play()
+		}
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -121,6 +149,21 @@ class CameraViewController: UIViewController {
 			recordButton.tintColor = .red
 		}
 	}
+	
+	func playMovie(url: URL) {
+		player = AVPlayer(url: url)
+		
+		let playerLayer = AVPlayerLayer(player: player)
+		var topRect = self.view.bounds
+		topRect.size.height /= 4
+		topRect.size.width /= 4
+		topRect.origin.y = view.layoutMargins.top
+		
+		playerLayer.frame = topRect
+		view.layer.addSublayer(playerLayer)
+		
+		player.play()
+	}
 }
 
 extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
@@ -135,6 +178,7 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
 		
 		DispatchQueue.main.async {
 			self.updateViews()
+			self.playMovie(url: outputFileURL)
 		}
 	}
 }
