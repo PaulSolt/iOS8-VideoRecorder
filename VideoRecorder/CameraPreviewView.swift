@@ -21,6 +21,9 @@ class CameraPreviewView: UIView {
     
     var session: AVCaptureSession? {
         get { return videoPlayerView.session }
-        set { videoPlayerView.session = newValue }
+        set {
+			videoPlayerView.session = newValue
+			videoPlayerView.videoGravity = .resizeAspectFill
+		}
     }
 }
