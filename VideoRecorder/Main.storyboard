@@ -52,12 +52,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y6r-zh-7rP" firstAttribute="leading" secondItem="fHU-Av-Kyd" secondAttribute="leading" id="JDj-He-wTF"/>
-                            <constraint firstItem="y6r-zh-7rP" firstAttribute="top" secondItem="AH0-9n-H7R" secondAttribute="top" id="KGd-xN-fn8"/>
-                            <constraint firstItem="y6r-zh-7rP" firstAttribute="trailing" secondItem="fHU-Av-Kyd" secondAttribute="trailing" id="Msb-en-eaB"/>
+                            <constraint firstAttribute="bottom" secondItem="y6r-zh-7rP" secondAttribute="bottom" id="83N-Sw-WOt"/>
+                            <constraint firstItem="y6r-zh-7rP" firstAttribute="leading" secondItem="fHU-Av-Kyd" secondAttribute="leading" id="D13-kL-LnA"/>
                             <constraint firstItem="sgv-tN-ipe" firstAttribute="centerX" secondItem="fHU-Av-Kyd" secondAttribute="centerX" id="NkT-HT-d0i"/>
-                            <constraint firstAttribute="bottom" secondItem="y6r-zh-7rP" secondAttribute="bottom" id="USl-3D-xgH"/>
                             <constraint firstItem="fHU-Av-Kyd" firstAttribute="bottom" secondItem="sgv-tN-ipe" secondAttribute="bottom" constant="60" id="cB4-Pm-jhg"/>
+                            <constraint firstItem="y6r-zh-7rP" firstAttribute="trailing" secondItem="fHU-Av-Kyd" secondAttribute="trailing" id="myW-3Y-1eR"/>
+                            <constraint firstItem="y6r-zh-7rP" firstAttribute="top" secondItem="fHU-Av-Kyd" secondAttribute="top" id="uKU-CK-0lZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fHU-Av-Kyd"/>
                     </view>
