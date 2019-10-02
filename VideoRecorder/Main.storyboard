@@ -35,7 +35,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6r-zh-7rP" customClass="CameraPreviewView" customModule="VideoRecorder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgv-tN-ipe">
                                 <rect key="frame" x="157" y="648" width="100" height="100"/>
@@ -43,8 +43,9 @@
                                     <constraint firstAttribute="height" constant="100" id="K5h-Nv-JEK"/>
                                     <constraint firstAttribute="width" constant="100" id="QZr-ol-C4U"/>
                                 </constraints>
-                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Record"/>
+                                <state key="selected" image="Stop"/>
                                 <connections>
                                     <action selector="recordButtonPressed:" destination="B5a-nt-rvl" eventType="touchUpInside" id="i30-Jd-xjh"/>
                                 </connections>
@@ -73,5 +74,6 @@
     </scenes>
     <resources>
         <image name="Record" width="116" height="116"/>
+        <image name="Stop" width="116" height="116"/>
     </resources>
 </document>
